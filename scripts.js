@@ -1,56 +1,41 @@
-// RushRanks landing interactivity
+// RushRanks landing interactivity (CT countdown, mobile nav)
 (function(){
-  // Mobile nav
   const btn = document.querySelector('.menu-btn');
   const mnav = document.querySelector('.mobile-nav');
-  if (btn && mnav) {
-    btn.addEventListener('click', ()=> mnav.classList.toggle('open'));
-  }
+  if (btn && mnav) btn.addEventListener('click', ()=> mnav.classList.toggle('open'));
 
-  // Reveal on scroll
-  const io = new IntersectionObserver((entries)=>{
-    for (const e of entries) if (e.isIntersecting) e.target.classList.add('in');
-  }, { threshold: .12 });
-  document.querySelectorAll('.reveal').forEach(el=> io.observe(el));
-
-  // Midnight countdown (local)
-  function msToMidnight(){
+  // Midnight countdown for America/Chicago (CT)
+  function msToMidnightCT(){
     const now = new Date();
-    const next = new Date(now);
-    next.setHours(24,0,0,0);
-    return next - now;
+    const ctNowStr = now.toLocaleString('en-US', { timeZone: 'America/Chicago' });
+    const ctNow = new Date(ctNowStr);
+    const ctNext = new Date(ctNow);
+    ctNext.setHours(24,0,0,0);
+    return ctNext - ctNow;
   }
   function fmt(ms){
-    const s = Math.floor(ms/1000);
+    const s = Math.max(0, Math.floor(ms/1000));
     const h = String(Math.floor(s/3600)).padStart(2,'0');
     const m = String(Math.floor((s%3600)/60)).padStart(2,'0');
     const sec = String(s%60).padStart(2,'0');
     return `${h}:${m}:${sec}`;
   }
   const cd = document.getElementById('countdown');
-  if (cd){
-    const tick = ()=> { cd.textContent = fmt(msToMidnight()); };
-    tick(); setInterval(tick, 1000);
-  }
+  if (cd){ const tick = ()=> cd.textContent = fmt(msToMidnightCT()); tick(); setInterval(tick, 1000); }
 
-  // Store link config: set your URLs here
+  // Store links
   const APP_STORE_URL = "";
-  const PLAY_URL      = "";
-
-  function setLink(id, url){
+  const PLAY_URL = "";
+  const buttons = ['ios-link','gp-link','ios-link-2','gp-link-2'];
+  for (const id of buttons){
     const a = document.getElementById(id);
-    if (!a) return;
-    if (url && url.trim().length > 6) {
-      a.setAttribute('href', url);
-      a.setAttribute('target', '_blank');
-      a.querySelector('.label').textContent = a.dataset.liveText;
-    } else {
-      const mail = 'mailto:support@rushranks.com?subject=Notify me when the app is live';
-      a.setAttribute('href', mail);
-      a.querySelector('.label').textContent = a.dataset.preText;
-    }
+    if (!a) continue;
+    const isIOS = id.includes('ios');
+    const url = isIOS ? APP_STORE_URL : PLAY_URL;
+    if (url && url.length > 6){ a.href = url; a.target = "_blank"; a.querySelector('.label').textContent = isIOS ? 'Download on the App Store' : 'Get it on Google Play'; }
+    else { a.href = 'mailto:support@rushranks.com?subject=Notify me when the app is live'; a.querySelector('.label').textContent = isIOS ? 'Notify me on iOS' : 'Notify me on Android'; }
   }
-  ['ios-link','gp-link','ios-link-2','gp-link-2'].forEach((id)=>{
-    setLink(id, id.includes('ios') ? APP_STORE_URL : PLAY_URL);
-  });
+
+  const y = document.getElementById('y');
+  if (y) y.textContent = new Date().getFullYear();
 })();
