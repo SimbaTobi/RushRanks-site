@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="56" viewBox="0 0 180 56">
+  <rect width="180" height="56" rx="12" fill="#0c1224" stroke="#1d2337"/>
+  <circle cx="24" cy="28" r="10" fill="#6ea8ff"/>
+  <text x="44" y="34" font-size="16" fill="#e8eefc" font-family="Arial" font-weight="700">App Store</text>
+</svg>

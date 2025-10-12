@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RushRanks — The daily video leaderboard by state</title>
+  <meta name="description" content="Compete by state with short videos. Daily resets, fair scoring, and winners saved to the Rushchive.">
+  <meta property="og:title" content="RushRanks — Daily video leaderboards by state">
+  <meta property="og:description" content="Drop your Rush, climb your state's top 100, and claim the crown before midnight.">
+  <meta property="og:image" content="assets/logo.svg">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/logo.svg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header-wrap">
+      <div class="brand">
+        <img src="assets/logo.svg" alt="RushRanks logo" width="36" height="36" class="logo" style="border-radius:9px;">
+        <div>RushRanks</div>
+      </div>
+      <nav class="nav">
+        <a href="#how">How it works</a>
+        <a href="#features">Features</a>
+        <a href="#rushchive">Rushchive</a>
+        <a href="#faq">FAQ</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </nav>
+      <button class="menu-btn" aria-label="Menu">Menu</button>
+    </div>
+    <div class="mobile-nav">
+      <a href="#how">How it works</a>
+      <a href="#features">Features</a>
+      <a href="#rushchive">Rushchive</a>
+      <a href="#faq">FAQ</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="h-grid">
+        <div class="reveal">
+          <h1 class="h-title">The daily video leaderboard by state.</h1>
+          <p class="h-sub">Drop your best <strong>Rush</strong>, climb the ranks in your state, and lock the win by midnight. State winners and the national #1 get saved forever in the <strong>Rushchive</strong>.</p>
+          <div class="badges" style="margin:18px 0 10px">
+            <a id="ios-link" class="badge-btn" href="#" data-pre-text="Notify me on iOS" data-live-text="Download on the App Store" aria-label="App Store">
+              <img src="assets/badge-appstore.svg" alt="" width="24" height="24"><span class="label">Notify me on iOS</span>
+            </a>
+            <a id="gp-link" class="badge-btn" href="#" data-pre-text="Notify me on Android" data-live-text="Get it on Google Play" aria-label="Google Play">
+              <img src="assets/badge-googleplay.svg" alt="" width="24" height="24"><span class="label">Notify me on Android</span>
+            </a>
+          </div>
+          <div class="strip">
+            <div class="pill">Daily reset</div>
+            <div class="pill">50 states</div>
+            <div class="pill">Fair & fun</div>
+            <div class="pill">13+ only</div>
+          </div>
+          <p class="note" style="margin-top:10px">Next reset in <span class="countdown" id="countdown">--:--:--</span>.</p>
+        </div>
+        <div class="hero-card reveal">
+          <div class="sheen"></div>
+          <div class="phone">
+            <img src="assets/phone.svg" alt="App mockup">
+          </div>
+          <div class="kp">
+            <span class="tag">Upload ≤ 20s</span>
+            <span class="tag">Anti‑cheat</span>
+            <span class="tag">Shareable wins</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="how" class="section">
+      <h2 class="reveal">How it works</h2>
+      <div class="grid-3">
+        <div class="card reveal">
+          <div class="kv"><strong>1</strong><span>Upload a <em>Rush</em> (≤ 20s)</span></div>
+          <p class="small">Shoot vertically, keep it tight, and hit upload. We process it fast.</p>
+        </div>
+        <div class="card reveal">
+          <div class="kv"><strong>2</strong><span>Climb your state’s top 100</span></div>
+          <p class="small">Compete where you live (or choose a state to represent).</p>
+        </div>
+        <div class="card reveal">
+          <div class="kv"><strong>3</strong><span>Win the state, go national</span></div>
+          <p class="small">We crown 50 state winners and a U.S. #1 every day.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="section">
+      <h2 class="reveal">Why creators like it</h2>
+      <div class="grid-3">
+        <div class="card reveal"><strong>Fast feedback</strong><br><span class="small">Daily cycles so you learn what lands.</span></div>
+        <div class="card reveal"><strong>Shareable wins</strong><br><span class="small">Auto winner cards for socials.</span></div>
+        <div class="card reveal"><strong>Simple analytics</strong><br><span class="small">Views, completion, likes.</span></div>
+        <div class="card reveal"><strong>Fair scoring</strong><br><span class="small">Unique likes + completion + views (light decay).</span></div>
+        <div class="card reveal"><strong>Safety</strong><br><span class="small">13+ only, moderation, reporting.</span></div>
+        <div class="card reveal"><strong>State pride</strong><br><span class="small">Claim the crown for your state.</span></div>
+      </div>
+    </section>
+
+    <section id="rushchive" class="section">
+      <h2 class="reveal">The Rushchive</h2>
+      <p class="small reveal">We save state winners and the national #1 to a public calendar — your Moment of the day, forever.</p>
+      <div class="card reveal">
+        <div class="strip">
+          <div class="pill">Oregon — 10/01</div>
+          <div class="pill">Texas — 10/01</div>
+          <div class="pill">New York — 10/01</div>
+          <div class="pill">California — 10/01</div>
+          <div class="pill">…</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="cta reveal">
+        <h3 style="margin-top:0">Ready to climb?</h3>
+        <p class="small">Drop your Rush, beat the clock, and claim your state.</p>
+        <div class="badges" style="justify-content:center; margin-top:8px">
+          <a id="ios-link-2" class="badge-btn" href="#" data-pre-text="Notify me on iOS" data-live-text="Download on the App Store" aria-label="App Store">
+            <img src="assets/badge-appstore.svg" alt="" width="24" height="24"><span class="label">Notify me on iOS</span>
+          </a>
+          <a id="gp-link-2" class="badge-btn" href="#" data-pre-text="Notify me on Android" data-live-text="Get it on Google Play" aria-label="Google Play">
+            <img src="assets/badge-googleplay.svg" alt="" width="24" height="24"><span class="label">Notify me on Android</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="section">
+      <h2 class="reveal">FAQ</h2>
+      <div class="grid-3">
+        <div class="card reveal">
+          <strong>When do leaderboards reset?</strong>
+          <p class="small">Every night at 11:59:59 PM (local time). Winners post right after.</p>
+        </div>
+        <div class="card reveal">
+          <strong>How are rankings calculated?</strong>
+          <p class="small">Unique likes + completion rate + views with light recency decay and anti‑cheat.</p>
+        </div>
+        <div class="card reveal">
+          <strong>Is there a cost?</strong>
+          <p class="small">RushRanks is free. Ads may appear to support the platform.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div>© <span id="y"></span> RushRanks — a Sandook LLC product.</div>
+      <div class="small">Need help? <a href="mailto:support@rushranks.com">support@rushranks.com</a></div>
+    </div>
+  </footer>
+
+  <script src="scripts.js"></script>
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    (function(){
+      const ios1 = document.getElementById('ios-link');
+      const ios2 = document.getElementById('ios-link-2');
+      const gp1 = document.getElementById('gp-link');
+      const gp2 = document.getElementById('gp-link-2');
+      function sync(src, dst){
+        if (src && dst) { dst.href = src.href; dst.querySelector('.label').textContent = src.querySelector('.label').textContent; }
+      }
+      setTimeout(()=>{ sync(ios1, ios2); sync(gp1, gp2); }, 50);
+    })();
+  </script>
+</body>
+</html>
