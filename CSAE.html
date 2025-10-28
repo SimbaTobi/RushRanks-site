@@ -87,7 +87,11 @@
   </footer>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    const y=document.getElementById('y'); if(y) y.textContent=(new Date()).getFullYear();
+    const btn=document.querySelector('.menu-btn');const mnav=document.createElement('div');mnav.className='mobile-nav';
+    mnav.innerHTML='<a href="index.html">Home</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a>';
+    document.querySelector('.header').appendChild(mnav);
+    if(btn) btn.addEventListener('click',()=>mnav.classList.toggle('open'));
   </script>
 </body>
 </html>
