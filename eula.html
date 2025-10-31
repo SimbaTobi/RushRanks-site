@@ -1,39 +1,27 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>RushRanks — End-User License Agreement (EULA)</title>
-  <meta name="description" content="RushRanks End-User License Agreement: your license to use the app, restrictions, ownership, disclaimers, and more." />
-  <link rel="stylesheet" href="styles.css" />
-  <meta name="theme-color" content="#000000" />
+  <link rel="stylesheet" href="styles.css?v=3">
+  <link rel="icon" href="assets/logo.png">
 </head>
 <body>
-  <!-- Header (matches your other pages) -->
-  <header class="site-header">
-    <div class="container nav">
-      <a class="logo" href="index.html">RushRanks</a>
-
-      <!-- Desktop links -->
-      <nav class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="privacy.html">Privacy</a>
-        <a href="terms.html">Terms</a>
-        <a href="CSAE.html">CSAE</a>
-        <a href="eula.html" aria-current="page">EULA</a>
-      </nav>
-
-      <!-- Mobile menu button -->
-      <button class="nav-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Menu">☰</button>
-
-      <!-- Mobile dropdown -->
-      <div id="mobile-nav" class="mobile-nav-panel" hidden>
-        <a href="index.html">Home</a>
-        <a href="privacy.html">Privacy</a>
-        <a href="terms.html">Terms</a>
-        <a href="CSAE.html">CSAE</a>
-        <a href="eula.html" aria-current="page">EULA</a>
+  <header class="header" style="position:sticky;top:0">
+    <div class="container header-wrap">
+      <div class="brand">
+        <img src="assets/logo.jpg" alt="RushRanks logo">
+        <div>RushRanks</div>
       </div>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="CSAE.html">CSAE</a>
+        <a href="eula.html">EULA</a>
+      </nav>
+      <button class="menu-btn" aria-label="Menu">Menu</button>
     </div>
   </header>
 
@@ -102,39 +90,19 @@
     <p class="micro muted" style="margin-top: 24px;">This EULA is part of our <a href="terms.html">Terms</a> and references our <a href="privacy.html">Privacy Policy</a>. Nothing here limits our ability to remove content or refer matters to authorities to protect users.</p>
   </main>
 
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div class="brand">RushRanks</div>
-      <nav class="foot-nav">
-        <a href="privacy.html">Privacy</a>
-        <a href="terms.html">Terms</a>
-        <a href="CSAE.html">CSAE</a>
-        <a href="eula.html">EULA</a>
-      </nav>
-      <div class="copy micro">© <span id="year"></span> Sandook LLC</div>
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <div>© <span id="y"></span> RushRanks — a Sandook LLC product.</div>
+      <div class="small">Sandook LLC · 9620 NE Tanasbourne Dr Ste 329 · Hillsboro, OR 97124 · <a href="mailto:support@rushranks.com">support@rushranks.com</a></div>
     </div>
   </footer>
-
-  <!-- Your main script if you have one -->
-  <script src="script.js"></script>
-
-  <!-- Fallback toggle (safe if script.js already handles the menu) -->
   <script>
-    (function(){
-      const btn = document.querySelector('.nav-toggle');
-      const panel = document.getElementById('mobile-nav');
-      if (!btn || !panel) return;
-      function openMenu(){ btn.setAttribute('aria-expanded','true'); panel.hidden = false; document.body.classList.add('no-scroll'); }
-      function closeMenu(){ btn.setAttribute('aria-expanded','false'); panel.hidden = true; document.body.classList.remove('no-scroll'); }
-      btn.addEventListener('click', () => {
-        const open = btn.getAttribute('aria-expanded') === 'true';
-        open ? closeMenu() : openMenu();
-      });
-      panel.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
-      // year
-      const y=document.getElementById('year'); if (y) y.textContent=new Date().getFullYear();
-    })();
+    const y=document.getElementById('y'); if(y) y.textContent=(new Date()).getFullYear();
+    const btn=document.querySelector('.menu-btn');const mnav=document.createElement('div');mnav.className='mobile-nav';
+    mnav.innerHTML='<a href="index.html">Home</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a>';
+    document.querySelector('.header').appendChild(mnav);
+    if(btn) btn.addEventListener('click',()=>mnav.classList.toggle('open'));
   </script>
 </body>
 </html>
