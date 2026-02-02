@@ -32,8 +32,8 @@
     if (!a) continue;
     const isIOS = id.includes('ios');
     const url = isIOS ? APP_STORE_URL : PLAY_URL;
-    if (url && url.length > 6){ a.href = url; a.target = "_blank"; a.querySelector('.label').textContent = isIOS ? 'Get it on the App Store' : 'Get it on Google Play'; }
-    else { a.href = 'mailto:support@rushranks.com?subject=Notify me when the app is live'; a.querySelector('.label').textContent = isIOS ? 'Download on iOS' : 'Get it on Google Play'; }
+    if (url && url.length > 6){ a.href = url; a.target = "_blank"; a.querySelector('.label').textContent = isIOS ? 'Get it on the App Store (iOS)' : 'Get it on Google Play'; }
+    else { a.href = 'mailto:support@rushranks.com?subject=Notify me when the app is live'; a.querySelector('.label').textContent = isIOS ? 'Download on iOS' : 'Get it on Google Play (Android)'; }
   }
 
   const y = document.getElementById('y');
