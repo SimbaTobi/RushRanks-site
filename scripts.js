@@ -24,7 +24,7 @@
   if (cd){ const tick = ()=> cd.textContent = fmt(msToMidnightCT()); tick(); setInterval(tick, 1000); }
 
   // Store links
-  const APP_STORE_URL = "";
+  const APP_STORE_URL = "https://apps.apple.com/us/app/rushranks/id6743615287";
   const PLAY_URL = "";
   const buttons = ['ios-link','gp-link','ios-link-2','gp-link-2'];
   for (const id of buttons){
