@@ -25,7 +25,7 @@
 
   // Store links
   const APP_STORE_URL = "https://apps.apple.com/us/app/rushranks/id6743615287";
-  const PLAY_URL = "";
+  const PLAY_URL = "https://play.google.com/store/apps/details?id=com.reelsapp.beta2025";
   const buttons = ['ios-link','gp-link','ios-link-2','gp-link-2'];
   for (const id of buttons){
     const a = document.getElementById(id);
